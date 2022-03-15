@@ -9,6 +9,8 @@ public class Palindromo {
 
 
 
+        pilha.INIT();
+
         for (int i = 0; i < vector.length; i++){
             System.out.print("Informe o " + i +" numero: ");
             vector[i] = scan.nextInt();
@@ -23,9 +25,10 @@ public class Palindromo {
             }
             else{
                 System.out.println("Esquece mano, nao chega perto de um palindromo");
-                break;
             }
         }
+
+        System.out.print(pilha.TOP());
 
 
     }

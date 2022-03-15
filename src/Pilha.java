@@ -15,7 +15,7 @@ public class Pilha {
     //PUSH
     public void PUSH(int valor) {
         dadosPilha[topo] = valor;
-        topo++;
+        topo++; // adiciona mais um indice para ser utilizado depois.
     }
 
     //POP
@@ -27,6 +27,8 @@ public class Pilha {
     //top
     public int TOP(){
         return  dadosPilha[topo-1];
+        //topo - 1.Pois quando eu dou um push.Eu preciso incrementar e ai isso faz com que fique um indice vazio.
+        //Se eu colocar dadosPilha[topo] ele vai pegar o indice que foi incrementado e esta fazio
     }
 
     //isEmpty
