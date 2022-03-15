@@ -1,6 +1,6 @@
 public class Pilha {
 
-    int[] dadosPilha = new int[6];
+    int[] dadosPilha = new int[3];
     int topo;
 
     //topo = n-1(ultimo elemento).
@@ -26,7 +26,7 @@ public class Pilha {
 
     //top
     public int TOP(){
-        return dadosPilha[topo-1];
+        return  dadosPilha[topo-1];
     }
 
     //isEmpty

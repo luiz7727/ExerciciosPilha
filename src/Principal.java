@@ -12,9 +12,13 @@ public class Principal {
         pilha.PUSH(2);
         pilha.PUSH(2);
 
-        for (int i =0; i <=6 ; i++){
+        for (int i =0; i <= 5 ; i++){
             pilha.POP();
         }
 
+        System.out.println(pilha.isFull());
+        System.out.println(pilha.isEmpty());
+
+        System.out.println(pilha.TOP());
     }
 }
