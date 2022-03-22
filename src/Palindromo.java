@@ -2,34 +2,57 @@ import java.util.Scanner;
 
 public class Palindromo {
     public static void main(String[] args) {
-        Scanner scan  = new Scanner(System.in);
-        Pilha pilha = new Pilha();
+        Pilha p = new Pilha();
+        Scanner scan = new Scanner(System.in);
 
-        int[] vector = new int[3];
+        int[] inverso = new int[4];
+        int[] naoInverso = new int[4];
+        int i;
 
-
-
-        pilha.INIT();
-
-        for (int i = 0; i < vector.length; i++){
-            System.out.print("Informe o " + i +" numero: ");
-            vector[i] = scan.nextInt();
-            pilha.PUSH(vector[i]);
+        for (i =0;i<inverso.length;i++){
+            System.out.print("Digite algum numero: ");
+            naoInverso[i] = scan.nextInt();
+            p.PUSH(naoInverso[i]);
         }
 
-        for (int i = 0; i < vector.length ; i++){
+        for (i = 0; i < inverso.length; i++)
+        {
+            inverso[i] = p.POP();
+        }
 
-            if(vector[i] == pilha.TOP()){
-                System.out.println("Eh um  palindromo");
-                break;
+        System.out.print(" Não inverso: ");
+        for (i = 0;i<inverso.length;i++)
+        {
+            System.out.print(naoInverso[i]);
+        }
+
+        System.out.print(" Inverso: ");
+        for (i = 0; i < inverso.length; i++)
+        {
+            System.out.print(inverso[i]);
+        }
+
+        System.out.println();
+
+        boolean palindromo = false;
+        for (i=0; i < naoInverso.length;i++){
+            if (naoInverso[i] == inverso[i]){
+                palindromo = true;
             }
-            else{
-                System.out.println("Esquece mano, nao chega perto de um palindromo");
+            else
+            {
+                palindromo = false;
             }
         }
 
-        System.out.print(pilha.TOP());
-
+        if (palindromo)
+        {
+            System.out.println("É um palindromo");
+        }
+        else
+        {
+            System.out.println("Não é um palindromo");
+        }
 
     }
 }
